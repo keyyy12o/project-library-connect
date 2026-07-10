@@ -23,7 +23,6 @@
 
             <div class="mb-3">
                 <label class="fw-bold">Judul Buku</label>
-                <!-- Ganti input text jadi select (dropdown) -->
                 <select name="buku_id" class="form-select" required>
                     <option value="">-- Pilih Buku yang Tersedia --</option>
                     @foreach($buku as $b)

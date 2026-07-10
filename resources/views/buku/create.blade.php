@@ -1,25 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Container utama untuk memposisikan konten di tengah -->
+
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-7">
-            
-            <!-- Header Halaman (Ikut ke tengah) -->
             <div class="header-top mb-4 text-center">
                 <h3 class="fw-bold m-0" style="color: #334155;">Tambah Koleksi Buku</h3>
             </div>
 
-            <!-- Card Form -->
             <div class="card border-0 shadow-sm" style="border-radius: 20px;">
                 <div class="card-body p-4 p-md-5">
-                    
-                    <form action="{{ route('buku.store') }}" method="POST">
+                     <form action="{{ route('buku.store') }}" method="POST">
                         @csrf
-
                         <div class="row g-4">
-                            <!-- Judul Buku -->
                             <div class="col-12">
                                 <label class="form-label fw-bold text-dark">Judul Buku</label>
                                 <div class="input-group">
@@ -32,7 +26,6 @@
                                 </div>
                             </div>
 
-                            <!-- Penulis -->
                             <div class="col-12">
                                 <label class="form-label fw-bold text-dark">Penulis</label>
                                 <input type="text" name="penulis" class="form-control bg-light" 
@@ -40,7 +33,6 @@
                                        style="border-radius: 10px; height: 48px;">
                             </div>
 
-                            <!-- Penerbit -->
                             <div class="col-12">
                                 <label class="form-label fw-bold text-dark">Penerbit</label>
                                 <input type="text" name="penerbit" class="form-control bg-light" 
@@ -48,7 +40,6 @@
                                        style="border-radius: 10px; height: 48px;">
                             </div>
 
-                            <!-- Kategori & Tahun -->
                             <div class="col-md-6">
                                 <label class="form-label fw-bold text-dark">Kategori</label>
                                 <select name="kategori" class="form-select bg-light" style="border-radius: 10px; height: 48px;">
@@ -71,7 +62,6 @@
                                        style="border-radius: 10px; height: 48px;">
                             </div>
 
-                            <!-- Status (Full Width agar seimbang) -->
                             <div class="col-12">
                                 <label class="form-label fw-bold text-dark">Status</label>
                                 <select name="status" class="form-select bg-light fw-semibold text-success" style="border-radius: 10px; height: 48px;">
@@ -83,7 +73,6 @@
 
                         <hr class="my-4 opacity-25">
 
-                        <!-- Tombol Aksi -->
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <a href="{{ route('buku.index') }}" class="btn btn-light px-4 py-2" 
                                style="border-radius: 10px; font-weight: 600;">
@@ -100,7 +89,6 @@
                 </div>
             </div>
             
-            <!-- Footer Form (Opsional) -->
             <p class="text-center text-muted mt-4 small">Sistem Informasi Perpustakaan &copy; 2026</p>
         </div>
     </div>

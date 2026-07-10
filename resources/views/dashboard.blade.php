@@ -5,7 +5,6 @@
 <div class="header-top d-flex justify-content-between align-items-center mb-4" data-aos="fade-down">
     <div>
         <h3 class="fw-bold m-0" style="color: #334155;">Dashboard Overview</h3>
-        <p class="text-muted small mb-0">Selamat datang kembali! Berikut ringkasan perpustakaan hari ini.</p>
     </div>
     <div class="text-end d-none d-md-block">
         <div class="d-flex align-items-center bg-white px-3 py-2 rounded-pill shadow-sm">

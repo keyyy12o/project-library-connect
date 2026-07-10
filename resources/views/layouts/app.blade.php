@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Connect</title>
+    <title> Key Library </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,7 +20,7 @@
         <div class="container">
             <a class="navbar-brand fw-bold text-success d-flex align-items-center" href="/">
                 <i class="fas fa-book-reader me-2 fs-3"></i>
-                <span>LIBRARY CONNECT</span>
+                <span> KEY LIBRARY </span>
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">

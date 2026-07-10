@@ -13,5 +13,6 @@ class Buku extends Model
         'kategori',
         'tahun_terbit',
         'status',
+        'sinopsis',
     ];
 }

@@ -109,12 +109,9 @@
         <div class="col" data-aos="fade-up">
             <div class="book-card">
                 <div class="book-cover-wrapper">
-                    {{-- CEK KOLOM GAMBAR SESUAI DATABASE --}}
                     @if(!empty($item->gambar))
-                        {{-- MENGARAH KE public/images/ --}}
                         <img src="{{ asset('images/'.$item->gambar) }}" alt="{{ $item->judul }}">
                     @else
-                        {{-- TAMPILAN JIKA TIDAK ADA GAMBAR --}}
                         <div class="text-center text-muted">
                             <i class="fas fa-book fa-3x mb-2 opacity-25"></i>
                             <div class="small">No Cover</div>

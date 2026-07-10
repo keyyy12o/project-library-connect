@@ -9,20 +9,17 @@ class BukuController extends Controller
 {
     public function index()
     {
-        // Mengambil data buku terbaru
         $data = Buku::latest()->get();
         return view('buku.index', compact('data'));
     }
 
     public function create()
     {
-        // Menampilkan form tambah buku
         return view('buku.create');
     }
 
     public function store(Request $request)
     {
-        // Menyimpan data buku baru ke database
         Buku::create([
             'judul' => $request->judul,
             'penulis' => $request->penulis,
@@ -40,13 +37,16 @@ class BukuController extends Controller
      */
     public function destroy($id)
     {
-        // Mencari data berdasarkan ID, jika tidak ada akan muncul error 404
         $buku = Buku::findOrFail($id);
         
-        // Menghapus data dari database
         $buku->delete();
 
-        // Kembali ke halaman daftar buku dengan pesan sukses
         return redirect('/buku')->with('success', 'Buku berhasil dihapus!');
+    }
+
+    public function show($id)
+    {
+        $buku = Buku::findOrFail($id);
+        return view('user.detail', compact('buku'));
     }
 }

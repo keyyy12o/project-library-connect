@@ -296,18 +296,13 @@
 
         <hr style="background: rgba(255,255,255,0.1); height: 1px; border: 0;">
 
-        <div class="row align-items-center pt-3">
-            <div class="col-md-6 text-center text-md-start">
-                <p class="small mb-0" style="color: rgba(255,255,255,0.5);">
-                    &copy; 2026 <strong>LibraryConnect</strong>. Seluruh Hak Cipta Dilindungi.
-                </p>
-            </div>
-            <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-                <p class="small mb-0" style="color: rgba(255,255,255,0.5);">
-                    Designed with <i class="fas fa-heart text-danger mx-1"></i> for better literacy.
-                </p>
-            </div>
-        </div>
+       <div class="row align-items-center pt-3">
+    <div class="col-12 text-center">
+        <p class="small mb-0" style="color: rgba(255,255,255,0.5);">
+            &copy; 2026 <strong>LibraryConnect</strong>. Seluruh Hak Cipta Dilindungi.
+        </p>
+    </div>
+</div>
     </div>
 </footer>
 

@@ -9,10 +9,8 @@ class Peminjaman extends Model
 {
     use HasFactory;
 
-    // Tetap gunakan ini karena nama tabel kamu di phpMyAdmin adalah 'peminjaman'
     protected $table = 'peminjaman';
-
-    // Update fillable agar sesuai dengan nama kolom baru di database
+    
     protected $fillable = [
         'anggota_id', 
         'buku_id', 

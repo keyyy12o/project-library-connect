@@ -51,7 +51,7 @@
     }
     
     .status-active { background: #dcfce7; color: #15803d; }
-    .status-late { background: #fee2e2; color: #b91c1c; } /* Warna merah buat terlambat */
+    .status-late { background: #fee2e2; color: #b91c1c; }
 
     .btn-action {
         padding: 12px 24px;
@@ -86,7 +86,8 @@
                         <th class="text-center">Tgl Pinjam</th>
                         <th class="text-center">Batas Kembali</th>
                         <th class="text-center">Status</th>
-                        <th class="text-center">Denda</th> <th class="text-end">Aksi</th>
+                        <th class="text-center">Denda</th> 
+                        <th class="text-end">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -110,7 +111,8 @@
                                 {{ $isLate ? 'Terlambat' : $p->status }}
                             </span>
                         </td>
-                        <td class="text-center fw-bold {{ $p->denda > 0 ? 'text-danger' : 'text-muted' }}">
+                        {{-- Bagian Denda yang sudah diperbaiki --}}
+                        <td class="text-center fw-bold {{ $p->denda > 0 ? 'text-danger' : 'text-muted' }}" style="white-space: nowrap;">
                             Rp {{ number_format($p->denda ?? 0, 0, ',', '.') }}
                         </td>
                         <td class="text-end">
@@ -124,13 +126,12 @@
                                 </form>
                                 @endif
 
-                               <form action="/peminjaman/{{ $p->id }}/delete" method="POST" class="d-inline">
-    @csrf
-    {{-- PASTIKAN TIDAK ADA @method('DELETE') DI SINI --}}
-    <button type="submit" class="btn btn-link text-danger p-0 text-decoration-none fw-bold" onclick="return confirm('Hapus data ini?')">
-        <i class="fas fa-trash-alt me-1"></i> Hapus
-    </button>
-</form>
+                                <form action="/peminjaman/{{ $p->id }}/delete" method="POST" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="btn btn-link text-danger p-0 text-decoration-none fw-bold" onclick="return confirm('Hapus data ini?')">
+                                        <i class="fas fa-trash-alt me-1"></i> Hapus
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>

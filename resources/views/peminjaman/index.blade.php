@@ -44,7 +44,6 @@
                         </td>
                         <td class="text-center">
                             <span class="fw-bold {{ $item->denda > 0 ? 'text-danger' : 'text-muted' }}">
-                                {{-- HANYA nampilin data dari database, jangan hitung di sini! --}}
                                 Rp {{ number_format($item->denda, 0, ',', '.') }}
                             </span>
                         </td>

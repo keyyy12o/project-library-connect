@@ -68,7 +68,7 @@
         </main>
 
         <footer class="mt-20 py-10 border-t w-full text-center text-sm text-gray-500 dark:border-[#3E3E3A]">
-            &copy; 2026 MTs Miftahul Huda. All rights reserved.
+            &copy; 2026 LibraryConncet. All rights reserved.
         </footer>
 
     </body>

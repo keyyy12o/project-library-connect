@@ -58,7 +58,6 @@
 </div>
 
 <style>
-    /* Tambahan agar warna badge lebih lembut */
     .bg-success-subtle { background-color: #e6fffa; color: #38a169; border: 1px solid #b2f5ea; }
     .bg-danger-subtle { background-color: #fff5f5; color: #e53e3e; border: 1px solid #feb2b2; }
 </style>

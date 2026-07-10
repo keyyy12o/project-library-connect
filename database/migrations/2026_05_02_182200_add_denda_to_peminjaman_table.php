@@ -9,7 +9,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('peminjaman', function (Blueprint $table) {
-            // Kita tambah kolom denda, tipenya integer, defaultnya 0
             $table->integer('denda')->default(0)->after('status');
         });
     }

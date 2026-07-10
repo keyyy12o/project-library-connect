@@ -10,14 +10,12 @@ use Carbon\Carbon;
 
 class PeminjamanController extends Controller
 {
-    // 1. HALAMAN DAFTAR (INDEX)
     public function index()
     {
         $peminjaman = Peminjaman::with(['anggota', 'buku'])->latest()->get();
         return view('peminjaman.index', compact('peminjaman'));
     }
 
-    // 2. HALAMAN FORM TAMBAH (CREATE) -> INI YANG TADI HILANG
     public function create()
     {
         $buku = Buku::where('status', 'Tersedia')->get();
@@ -25,7 +23,6 @@ class PeminjamanController extends Controller
         return view('peminjaman.create', compact('buku', 'anggota'));
     }
 
-    // 3. PROSES SIMPAN (STORE)
     public function store(Request $request)
     {
         $request->validate([
@@ -48,7 +45,6 @@ class PeminjamanController extends Controller
         return redirect('/peminjaman')->with('success', 'Berhasil mencatat peminjaman');
     }
 
-    // 4. PROSES HAPUS (DESTROY)
     public function destroy($id)
     {
         $item = Peminjaman::findOrFail($id);
@@ -57,26 +53,25 @@ class PeminjamanController extends Controller
         return redirect('/peminjaman')->with('success', 'Data dihapus');
     }
 
-    // 5. PROSES KEMBALI & HITUNG DENDA (KEMBALI)
-  public function kembali($id)
-{
-    $item = Peminjaman::findOrFail($id);
-    
-    $tgl_deadline = Carbon::parse($item->tgl_kembali)->startOfDay();
-    $tgl_sekarang = Carbon::now()->startOfDay();
-    
-    $denda = 0;
+    public function kembali($id)
+    {
+        $item = Peminjaman::findOrFail($id);
+        
+        $tgl_deadline = Carbon::parse($item->tgl_kembali)->startOfDay();
+        $tgl_sekarang = Carbon::now()->startOfDay();
+        
+        $denda = 0;
 
-    if ($tgl_sekarang->gt($tgl_deadline)) {
-        $selisih = $tgl_sekarang->diffInDays($tgl_deadline);
-        // Pakai abs() biar angkanya dipaksa positif
-        $denda = abs($selisih) * 5000;
-    }
+        if ($tgl_sekarang->gt($tgl_deadline)) {
+            $selisih = $tgl_sekarang->diffInDays($tgl_deadline);
+            // Pakai abs() biar angkanya dipaksa positif
+            $denda = abs($selisih) * 5000;
+        }
 
-    $item->update([
-        'status' => 'Sudah Kembali',
-        'denda'  => $denda
-    ]);
+        $item->update([
+            'status' => 'Sudah Kembali',
+            'denda'  => $denda
+        ]);
 
     \App\Models\Buku::where('id', $item->buku_id)->update(['status' => 'Tersedia']);
 
